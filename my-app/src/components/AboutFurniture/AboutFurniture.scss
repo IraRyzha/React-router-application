@@ -1,0 +1,45 @@
+@use '../../scss/config.scss' as *; 
+
+
+@media screen and (min-width: 901px) {
+    .about-furniture-section {
+        @include flex-container(row);
+        img.furniture {
+            @include set-size(32%, auto);
+        } 
+        div.text {
+            @include set-size(38%, auto);
+            @include flex-container(column, center);
+            padding: 20px 35px;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .about-furniture-section {
+        @include flex-container(column);
+        img.furniture {
+            @include set-size(100%, auto);
+        } 
+        div.text {
+            @include set-size(100%, auto);
+            @include flex-container(column, center);
+            padding: 55px 35px;
+        }
+    }
+}
+
+.about-furniture-section {
+    @include set-size(100%, 32vh);
+    div.text {
+        @include flex-container(column, center);
+        h3 {
+            letter-spacing: 5px;
+            margin: 0px 0px 20px;
+        }
+        p {
+            @include main-paragraph-text();
+            margin: 0;
+        }
+    }
+}

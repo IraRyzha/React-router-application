@@ -1,0 +1,134 @@
+@use '../../scss/config.scss' as *; 
+
+
+@media screen and (min-width: 901px) {
+    div.ways-to-decorate {
+        @include set-size(100%, 68vh);
+        @include flex-container(row);
+        img.furniture {
+            @include set-size(56%, auto);
+        }
+        .ways-section {
+            @include set-size(44%, 68vh);
+            padding: 30px 40px 85px;
+            .ways {
+                h1 {
+                    font-size: 41px;
+                }
+            }
+            .control-buttons {
+                @include set-size(29%, auto);
+                bottom: 0;
+                left: 0;
+                button {
+                    @include set-size(50%, 80px);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    div.ways-to-decorate {
+        @include set-size(100%, auto);
+        @include flex-container(column);
+        img.furniture {
+            @include set-size(100%, auto);
+        }
+        .ways-section {
+            @include set-size(100%, auto);
+            padding: 40px 35px 40px;
+            .ways {
+                h1 {
+                    font-size: 28px;
+                }
+            }
+            .control-buttons {
+                @include set-size(21%, auto);
+                top: -50px;
+                right: 0;
+                button {
+                    @include set-size(50%, 50px);
+                }
+            }
+        }
+    }
+}
+
+div.ways-to-decorate {
+    .ways-section {
+        @include flex-container(column, center, center);
+        position: relative;
+        span.loading {
+            font-size: 20px;
+            font-weight: 600;
+            animation: loading infinite 1s alternate ease-in-out;
+        } 
+        .ways {
+            @include set-size(85%, auto);
+            h1 {
+                font-weight: 700;
+                margin: 0;
+            }
+            p {
+                @include main-paragraph-text();
+            }
+            button.shop-now {
+                @include set-size(auto, 50px);
+                border: none;
+                align-self: start;
+                background-color: transparent;
+                font-weight: 700;
+                &:hover {
+                    transform: scale(1.02);
+                } 
+                &:hover a {
+                    color: $dark-gray;
+                }
+                a {
+                    color: $black;
+                    letter-spacing: 5px;
+                    font-size: 21px;
+                } 
+                img {
+                    color: $gray;;
+                    font-size: 21px;
+                    margin-left: 15px;
+                    animation: arrow infinite 1s alternate ease-in-out;
+                } 
+            } 
+        } 
+    } 
+    
+    .control-buttons {
+        position: absolute;
+        button {
+            background-color: $black;
+            border: 2px solid $black;
+        }
+        &:hover {
+            background-color: $dark-gray;
+        }
+        img {
+            margin: 0 auto;
+        }
+    }
+}
+
+@keyframes loading {
+    0% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(10px);
+    }
+}
+@keyframes arrow {
+    0% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(5px);
+    }
+}
+

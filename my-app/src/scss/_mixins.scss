@@ -1,0 +1,28 @@
+@use 'variables' as *;
+
+@mixin set-size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin flex-container($direction: null, $justify: null, $align: null, $gap: null) {
+    display: flex;
+    @if $direction != null {
+        flex-direction: $direction;
+    }
+    @if $justify != null {
+        justify-content: $justify;
+    }
+    @if $direction != null {
+        align-items: $align;
+    }
+    @if $gap != null {
+        gap: $gap;
+    }
+}
+
+@mixin main-paragraph-text() {
+    color: $gray;
+    font-weight: 600;
+    font-size: 17px;
+}
