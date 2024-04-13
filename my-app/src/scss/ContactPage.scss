@@ -1,0 +1,21 @@
+@use "./config.scss" as *;
+
+main {
+  @include set-size(100%, 100vh);
+  @include flex-container(row);
+  img {
+    @include set-size(65%, 100vh);
+  }
+  div.about-page-text {
+    @include set-size(35%, 100vh);
+    @include flex-container(column, start, center);
+    padding: 110px 80px;
+    h1 {
+      font-size: 41px;
+      line-height: 45px;
+    }
+    p {
+      @include main-paragraph-text();
+    }
+  }
+}
