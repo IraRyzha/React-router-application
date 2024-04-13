@@ -1,0 +1,90 @@
+@use "../../scss/config.scss" as *;
+
+@media screen and (min-width: 901px) {
+  nav {
+    padding: 50px 60px;
+    .menu-btn {
+      display: none;
+    }
+    .nav-list {
+      @include flex-container(row, center, start, 40px);
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  nav {
+    padding: 30px 30px;
+    .logo {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+    .menu-btn {
+      display: block;
+    }
+    .nav-list {
+      display: none;
+    }
+  }
+}
+
+.nav-modal {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: rgba(rgb(0, 0, 0), 0.5);
+  z-index: 100;
+}
+nav.modal {
+  @include set-size(50%, 50%);
+  @include flex-container(column, center, center, 30px);
+  background-color: $light-gray;
+  border-radius: 25px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 100;
+  .nav-list {
+    @include flex-container(column, center, center, 25px);
+  }
+}
+
+nav {
+  @include set-size(100%, auto);
+  @include flex-container(row, flex-start, center, 70px);
+  position: fixed;
+  top: 0;
+  .close-btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    &:hover {
+      transform: scale(1.04);
+    }
+  }
+  .nav-list {
+    li {
+      @include flex-container(row, center, start, 40px);
+      &:hover {
+        transform: scale(1.02);
+      }
+      a {
+        color: $white;
+        font-weight: 600;
+        &.active {
+          font-weight: 700;
+          transform: scale(1.04);
+        }
+      }
+    }
+  }
+}
