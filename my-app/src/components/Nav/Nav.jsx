@@ -11,9 +11,9 @@ function Nav() {
 
   const navItems = [
     { name: "home", url: "/" },
-    { name: "shop", url: "shop" },
-    { name: "about", url: "about" },
-    { name: "contact", url: "contact" },
+    { name: "shop", url: "/shop" },
+    { name: "about", url: "/about" },
+    { name: "contact", url: "/contact" },
   ];
 
   useEffect(() => {
